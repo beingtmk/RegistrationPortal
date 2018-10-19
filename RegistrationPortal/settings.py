@@ -63,7 +63,12 @@ INSTALLED_APPS = [
     'bootcamp.messager.apps.MessagerConfig',
     'bootcamp.news.apps.NewsConfig',
     'bootcamp.qa.apps.QaConfig',
-    'bootcamp.search.apps.SearchConfig'
+    'bootcamp.search.apps.SearchConfig',
+
+    'phonenumber_field',
+    'localflavor',
+
+
 ]
 SITE_ID = 1
 
@@ -115,7 +120,7 @@ WSGI_APPLICATION = 'RegistrationPortal.wsgi.application'
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
 AUTH_USER_MODEL = 'users.User'
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-redirect-url
-LOGIN_REDIRECT_URL = 'news:list'
+LOGIN_REDIRECT_URL = 'users:dashboard'
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-url
 LOGIN_URL = 'account_login'
 
@@ -123,7 +128,7 @@ ACCOUNT_ALLOW_REGISTRATION = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_REQUIRED = False
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
@@ -131,6 +136,10 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_ADAPTER = 'bootcamp.users.adapters.AccountAdapter'
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = 'bootcamp.users.adapters.SocialAccountAdapter'
+
+ACCOUNT_FORMS = {
+'signup': 'bootcamp.users.forms.CustomSignupForm',
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -143,8 +152,8 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'regpor',
-        'USER': 'regpor',
+        'NAME': 'ksko',
+        'USER': 'ksko',
         'PASSWORD': 'ultimate',
         'HOST': 'localhost',
         'PORT': '',

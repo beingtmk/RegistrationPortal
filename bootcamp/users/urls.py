@@ -24,4 +24,14 @@ urlpatterns = [
         view=views.UserDetailView.as_view(),
         name='detail'
     ),
+    url(
+        regex=r'^~dashboard/$',
+        view=views.DashboardView.as_view(),
+        name='dashboard'
+    ),
+    url(
+        regex=r'^~profile_create/$',
+        view=views.ProfileCreateView.as_view(),
+        name='profile_create'
+    ),
 ]
