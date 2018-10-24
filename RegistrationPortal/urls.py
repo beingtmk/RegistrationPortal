@@ -12,6 +12,18 @@ urlpatterns = [
         TemplateView.as_view(template_name='pages/home.html'), name='home'),
     url(r'^about/$',
         TemplateView.as_view(template_name='pages/about.html'), name='about'),
+
+    # KSKO pages
+    url(r'^ksko/home$',
+        TemplateView.as_view(template_name='ksko/home.html'), name='ksko_home'),
+    url(r'^ksko/exam$',
+        TemplateView.as_view(template_name='ksko/exam.html'), name='ksko_exam'),
+    url(r'^ksko/about$',
+        TemplateView.as_view(template_name='ksko/about.html'), name='ksko_about'),
+    url(r'^ksko/contact$',
+        TemplateView.as_view(template_name='ksko/contact.html'), name='ksko_contact'),
+
+
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),
     # User management
