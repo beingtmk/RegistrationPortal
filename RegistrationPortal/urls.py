@@ -8,12 +8,14 @@ from django.views import defaults as default_views
 from graphene_django.views import GraphQLView
 
 urlpatterns = [
-    url(r'^$',
-        TemplateView.as_view(template_name='pages/home.html'), name='home'),
-    url(r'^about/$',
-        TemplateView.as_view(template_name='pages/about.html'), name='about'),
+    # url(r'^$',
+    #     TemplateView.as_view(template_name='pages/home.html'), name='home'),
+    # url(r'^about/$',
+    #     TemplateView.as_view(template_name='pages/about.html'), name='about'),
 
     # KSKO pages
+    url(r'^$',
+        TemplateView.as_view(template_name='ksko/home.html'), name='ksko_home'),
     url(r'^ksko/home$',
         TemplateView.as_view(template_name='ksko/home.html'), name='ksko_home'),
     url(r'^ksko/exam$',
